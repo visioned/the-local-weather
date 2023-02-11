@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col flex-1 items-center">
     <!-- banner -->
-    <div class="text-white p-4 bg-weather-secondary w-full text-center">
+    <div v-if="route.query.preview" class="text-white p-4 bg-weather-secondary w-full text-center">
       <p>
         You're currently previewing this City, click the "+" icon to start
         tracking this location.
