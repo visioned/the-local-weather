@@ -61,8 +61,7 @@ const previewCity = (searchResult) => {
   });
 };
 
-const mapboxAPIKey =
-  "pk.eyJ1IjoiYWprZyIsImEiOiJjbGR0cDBzdDUwMTFuM3ZtY3FkY2djdHhpIn0.SOYA6yqyfV2tRVkCZKMeZA";
+const mapboxAPIKey = import.meta.env.VITE_MAPBOX_API_KEY;
 let searchQuery = ref("");
 let queryTimeout = ref(null);
 let mapboxSearchResults = ref(null);

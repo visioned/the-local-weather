@@ -1,7 +1,10 @@
 <template>
   <div class="flex flex-col flex-1 items-center">
     <!-- banner -->
-    <div v-if="route.query.preview" class="text-white p-4 bg-weather-secondary w-full text-center">
+    <div
+      v-if="route.query.preview"
+      class="text-white p-4 bg-weather-secondary w-full text-center"
+    >
       <p>
         You're currently previewing this City, click the "+" icon to start
         tracking this location.
@@ -19,9 +22,9 @@
           })
         }}
         {{
-          (new Date(weatherData.currentTime).toLocaleTimeString("en-US"),
-          {
-            timeStyle: "short",
+          new Date(weatherData.currentTime).toLocaleTimeString("en-US", {
+            hour: "numeric",
+            minute: "numeric",
           })
         }}
       </p>
@@ -103,7 +106,7 @@
       @click="removeCity"
     >
       <i class="fa-solid fa-trash"></i>
-      <p>Remove City</p>
+      <p>Remove city</p>
     </div>
   </div>
 </template>
@@ -113,10 +116,11 @@ import axios from "axios";
 import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
+const OPENWEATHER_API = import.meta.env.VITE_OPENWEATHER_API;
 const getWeatherData = async () => {
   try {
     const weatherData = await axios.get(`
-https://api.openweathermap.org/data/3.0/onecall?lat=${route.query.lat}&lon=${route.query.lon}&appid=05c6aa1a10ad526eb9c44a825fe50b1d&units=imperial
+https://api.openweathermap.org/data/3.0/onecall?lat=${route.query.lat}&lon=${route.query.lon}&appid=${OPENWEATHER_API}&units=imperial
 `);
     const localOffset = new Date().getTimezoneOffset() * 60000;
     const utc = weatherData.data.current.dt * 1000 + localOffset;

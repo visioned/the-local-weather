@@ -25,21 +25,21 @@
             <h1 class="text-2xl mb-1">About</h1>
 
             <p class="mb-4">
-              This is a simple weather app that uses the OpenWeatherMap API to
+              This is a simple Weather App that uses the OpenWeatherMap API to
               display the current weather for a given location.
             </p>
 
             <h2 class="text-2xl">How it works:</h2>
             <ol class="list-decimal list-inside mb-4">
               <li>Enter a location in the search bar</li>
-              <li>Click the search button</li>
               <li>Click the location in the list</li>
+              <li>View the city preview, click the "+" icon at the top to start tracking</li>
             </ol>
 
-            <h2 class="text-2xl">Removing a City:</h2>
+            <h2 class="text-2xl">Removing a city:</h2>
             <p class="mb-4">
               If you no longer wish to track a city, simply select the city
-              within the home page, and click the "Remove" button.
+              from the home page, and click the "Remove city" button at the bottom.
             </p>
           </div>
         </BaseModal>
